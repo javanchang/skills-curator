@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - **Project renamed `skill-audit` → `skills-curator`** (Claude Code slash command
-  is `/curator`). Name chosen because the tool doesn't only audit — it actively
+  is `/skills-curator`). Name chosen because the tool doesn't only audit — it actively
   curates (gives keep / prune recommendations) — and `skills-curator` had no
   GitHub collisions at the time of release.
 - Skill rewritten to use embedded Python heredocs instead of `awk`.

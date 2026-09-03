@@ -1,6 +1,6 @@
 2026-01-05T10:00:00Z	s1	skill	user	code-review
 not a valid log line
-2026-01-05T10:05:00Z	s1	skill	user	curator
+2026-01-05T10:05:00Z	s1	skill	user	skills-curator
 2026-01-05T10:10:00Z	s2	read	plugin	brainstorming
 
 2026-01-15T09:00:00Z	s3	bash	plugin	test-skill

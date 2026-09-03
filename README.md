@@ -42,13 +42,13 @@ bash scripts/install-local.sh
 
 The script is **idempotent** — re-running it updates files in place, no duplicates. It will:
 
-1. Copy `SKILL.md` → `~/.claude/skills/curator/SKILL.md`
+1. Copy `SKILL.md` → `~/.claude/skills/skills-curator/SKILL.md`
 2. Copy `hooks/log-skill-usage.py` → `~/.claude/hooks/log-skill-usage.py`
 3. Merge a `PostToolUse` entry into `~/.claude/settings.json` (matcher: `Skill|Read|Bash`)
 4. Copy `bin/skills-curator` → `~/.local/bin/skills-curator` and print a PATH hint
 
-After install, invoke the skill with `/curator` (the slash-command name comes from
-`SKILL.md`'s frontmatter `name: curator`, not the repo name).
+After install, invoke the skill with `/skills-curator` (the slash-command name comes from
+`SKILL.md`'s frontmatter `name: skills-curator`).
 
 ### Option 2: Install from GitHub via `npx skills`
 
@@ -77,8 +77,8 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/javanchang/skills-cura
 ### Option 3: Manual copy (when nothing else works)
 
 ```bash
-mkdir -p ~/.claude/skills/curator
-cp SKILL.md ~/.claude/skills/curator/SKILL.md
+mkdir -p ~/.claude/skills/skills-curator
+cp SKILL.md ~/.claude/skills/skills-curator/SKILL.md
 mkdir -p ~/.claude/hooks
 cp hooks/log-skill-usage.py ~/.claude/hooks/log-skill-usage.py
 # Then merge `hooks.PostToolUse` into ~/.claude/settings.json manually.
@@ -89,7 +89,7 @@ cp hooks/log-skill-usage.py ~/.claude/hooks/log-skill-usage.py
 ## Verify it works
 
 Restart Claude Code so the hook takes effect, then call any skill (e.g.
-`/curator`) and check the log:
+`/skills-curator`) and check the log:
 
 ```bash
 cat ~/.claude/skill-usage.log
@@ -108,7 +108,7 @@ If the file doesn't exist → re-check your `settings.json` and python path.
 
 ## Use
 
-Just run `/curator` inside Claude Code. It will run the four-step report
+Just run `/skills-curator` inside Claude Code. It will run the four-step report
 and print actionable keep/uninstall recommendations.
 
 The skill is fully self-contained — no Python deps, no network calls, no side
@@ -170,10 +170,9 @@ skills-curator/
 > This is the canonical layout that `npx skills add` discovers — a repo
 > with `SKILL.md` at the root is treated as a single-skill repo.
 >
-> **Naming note:** the repo is `skills-curator`, the Python package is
-> `skills-curator`, the CLI is `skills-curator`, but the **slash-command
-> inside Claude Code is `/curator`** (no `skills-` prefix — shorter to
-> type). The mapping is set by the `name:` field in `SKILL.md` frontmatter.
+> **Naming note:** the repo, Python package, CLI, and slash-command are all
+> `skills-curator` — invoked in Claude Code as `/skills-curator`. The
+> slash-command name comes from the `name:` field in `SKILL.md` frontmatter.
 
 ---
 
@@ -209,7 +208,7 @@ re-publishing to GitHub:
 bash scripts/install-local.sh    # or .\scripts\install-local.ps1
 ```
 
-Then restart Claude Code and run `/curator`.
+Then restart Claude Code and run `/skills-curator`.
 
 ---
 
@@ -219,7 +218,7 @@ Then restart Claude Code and run `/curator`.
 2. Run `bash scripts/install-local.sh` to refresh your local install.
 3. Test the change in Claude Code.
 4. `git commit -am "..."` and `git push origin main`.
-5. Other machines running `npx skills update curator` will get the new
+5. Other machines running `npx skills update skills-curator` will get the new
    `SKILL.md`. To get the new hook, those users also re-run
    `bash scripts/install-local.sh` (or pull the file from the repo).
 

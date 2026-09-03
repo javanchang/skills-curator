@@ -49,24 +49,24 @@ def count_skills(log_path: Path) -> Counter:
 
 def test_2col_format_counts():
     counts = count_skills(FIXTURES / "2col.log")
-    assert counts == {"code-review": 1, "curator": 1, "brainstorming": 1}
+    assert counts == {"code-review": 1, "skills-curator": 1, "brainstorming": 1}
 
 
 def test_3col_format_counts():
     counts = count_skills(FIXTURES / "3col.log")
-    assert counts == {"code-review": 1, "curator": 1, "brainstorming": 1}
+    assert counts == {"code-review": 1, "skills-curator": 1, "brainstorming": 1}
 
 
 def test_4col_format_counts():
     counts = count_skills(FIXTURES / "4col.log")
-    assert counts == {"code-review": 1, "curator": 1, "brainstorming": 1}
+    assert counts == {"code-review": 1, "skills-curator": 1, "brainstorming": 1}
 
 
 def test_5col_format_counts():
     counts = count_skills(FIXTURES / "5col.log")
     assert counts == {
         "code-review": 1,
-        "curator": 2,   # used twice in different sessions
+        "skills-curator": 2,   # used twice in different sessions
         "brainstorming": 1,
         "test-skill": 1,
     }
@@ -85,7 +85,7 @@ def test_mixed_lines_skip_garbage():
     counts = count_skills(FIXTURES / "mixed.log")
     assert counts == {
         "code-review": 1,
-        "curator": 1,
+        "skills-curator": 1,
         "brainstorming": 1,
         "test-skill": 1,
     }

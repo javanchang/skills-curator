@@ -2,7 +2,7 @@
 
 This directory contains the companion `PostToolUse` hook that records every
 skill activation to `~/.claude/skill-usage.log`. The hook is required for the
-`/curator` skill to produce meaningful call-frequency data.
+`/skills-curator` skill to produce meaningful call-frequency data.
 
 ## Files
 

@@ -6,7 +6,7 @@
 #   bash /path/to/skills-curator/scripts/install-local.sh
 #
 # What it does:
-#   1. Copy ./SKILL.md → ~/.claude/skills/curator/SKILL.md
+#   1. Copy ./SKILL.md → ~/.claude/skills/skills-curator/SKILL.md
 #   2. Copy ./hooks/log-skill-usage.py → ~/.claude/hooks/log-skill-usage.py
 #   3. Merge a PostToolUse hook into ~/.claude/settings.json
 #   4. Copy ./bin/skills-curator → ~/.local/bin/skills-curator (and chmod +x)
@@ -24,7 +24,7 @@ SRC_SKILL="${REPO_ROOT}/SKILL.md"
 SRC_HOOK="${REPO_ROOT}/hooks/log-skill-usage.py"
 SRC_BIN="${REPO_ROOT}/bin/skills-curator"
 
-DEST_SKILL_DIR="${HOME}/.claude/skills/curator"
+DEST_SKILL_DIR="${HOME}/.claude/skills/skills-curator"
 DEST_SKILL="${DEST_SKILL_DIR}/SKILL.md"
 DEST_HOOK_DIR="${HOME}/.claude/hooks"
 DEST_HOOK="${DEST_HOOK_DIR}/log-skill-usage.py"
@@ -128,5 +128,5 @@ esac
 
 echo ""
 echo "Done. Restart Claude Code so the hook takes effect."
-echo "Invoke the skill with: /curator"
+echo "Invoke the skill with: /skills-curator"
 echo "Verify with:  cat ~/.claude/skill-usage.log"

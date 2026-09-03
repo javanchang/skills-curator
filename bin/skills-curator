@@ -9,7 +9,7 @@ Defaults:
     --skills-dir   ~/.claude/skills
     --plugins-dir  ~/.claude/plugins
 
-The output is the same Markdown table the `/curator` skill produces.
+The output is the same Markdown table the `/skills-curator` skill produces.
 This lets you regenerate the report without invoking the skill itself — handy
 for cron jobs or CI checks.
 """

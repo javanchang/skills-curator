@@ -5,7 +5,7 @@
 #   .\scripts\install-local.ps1
 #
 # What it does:
-#   1. Copy .\SKILL.md → $env:USERPROFILE\.claude\skills\curator\SKILL.md
+#   1. Copy .\SKILL.md → $env:USERPROFILE\.claude\skills\skills-curator\SKILL.md
 #   2. Copy .\hooks\log-skill-usage.py → $env:USERPROFILE\.claude\hooks\log-skill-usage.py
 #   3. Merge a PostToolUse hook into $env:USERPROFILE\.claude\settings.json
 #   4. Copy .\bin\skills-curator → $env:USERPROFILE\bin\skills-curator
@@ -20,7 +20,7 @@ $SrcSkill      = Join-Path $RepoRoot "SKILL.md"
 $SrcHook       = Join-Path $RepoRoot "hooks\log-skill-usage.py"
 $SrcBin        = Join-Path $RepoRoot "bin\skills-curator"
 
-$DestSkillDir  = Join-Path $env:USERPROFILE ".claude\skills\curator"
+$DestSkillDir  = Join-Path $env:USERPROFILE ".claude\skills\skills-curator"
 $DestSkill     = Join-Path $DestSkillDir "SKILL.md"
 $DestHookDir   = Join-Path $env:USERPROFILE ".claude\hooks"
 $DestHook      = Join-Path $DestHookDir "log-skill-usage.py"
@@ -116,5 +116,5 @@ if ($userPath -notlike "*$DestBinDir*") {
 
 Write-Host ""
 Write-Host "Done. Restart Claude Code so the hook takes effect."
-Write-Host "Invoke the skill with: /curator"
+Write-Host "Invoke the skill with: /skills-curator"
 Write-Host "Verify with:  Get-Content \$env:USERPROFILE\.claude\skill-usage.log"

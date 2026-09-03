@@ -1,6 +1,6 @@
 # Verdict rules
 
-The audit report (`/curator`) tags every installed skill with one of:
+The audit report (`/skills-curator`) tags every installed skill with one of:
 
 - **保留** (keep) — used at least once per week
 - **建议卸载** (suggest uninstall) — large and never / rarely used
@@ -36,7 +36,7 @@ single-developer setup:
 
 ## Tweak the thresholds
 
-The verdict logic lives in the `/curator` skill (`SKILL.md` at the repo root).
+The verdict logic lives in the `/skills-curator` skill (`SKILL.md` at the repo root).
 Edit the thresholds table there if your situation is different
 (e.g. you're on a tiny SSD and want the 30-day window shortened).
 

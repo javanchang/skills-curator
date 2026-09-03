@@ -44,7 +44,7 @@ counts = Counter(line.split("\t")[-1] for line in open(log) if "\t" in line)
 
 - Append-only: rows are written line-by-line, no read-modify-write
 - Crash-safe: a partial final row can't corrupt the rest of the file
-- Greppable: `grep curator ~/.claude/skill-usage.log` works
+- Greppable: `grep code-review ~/.claude/skill-usage.log` works
 - Tooling-free: anything that reads text can audit it
 
 If you need structured access, convert with:

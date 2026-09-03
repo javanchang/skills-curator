@@ -1,5 +1,5 @@
 ---
-name: curator
+name: skills-curator
 description: 策展已安装的 Claude/Codex/agent skills——展示磁盘占用、调用频次，给出保留/卸载建议。
 ---
 
@@ -161,12 +161,12 @@ fi
 > **直接安装**：本仓库自带一键脚本
 > （Linux/macOS `bash scripts/install-local.sh`，
 > Windows PowerShell `.\scripts\install-local.ps1`）。
-> 脚本会幂等地：拷贝 `SKILL.md` 到 `~/.claude/skills/curator/`，
+> 脚本会幂等地：拷贝 `SKILL.md` 到 `~/.claude/skills/skills-curator/`，
 > 拷贝 `hooks/log-skill-usage.py` 到 `~/.claude/hooks/`，
 > 合并 `hooks.PostToolUse` 到 `~/.claude/settings.json`，
 > 拷贝 `bin/skills-curator` 到 `~/.local/bin/`（Windows: `~\bin\`）并加入 `PATH` 提示。
 >
-> 安装后**主动调用一次** `/curator` 或任何 skill，验证日志是否落盘：
+> 安装后**主动调用一次** `/skills-curator` 或任何 skill，验证日志是否落盘：
 > ```bash
 > cat ~/.claude/skill-usage.log
 > ```
