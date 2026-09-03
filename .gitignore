@@ -1,0 +1,45 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editors ---
+.idea/
+.vscode/*
+!.vscode/settings.json
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# --- Logs (this project emits skill-usage logs only as runtime data) ---
+*.log
+!.github/
+!tests/fixtures/
+!tests/fixtures/*.log
+
+# --- Build / dist ---
+build/
+dist/
+node_modules/
+
+# --- Local test artifacts ---
+.coverage
+.tox/
+.cache/
+.pytest_cache/

@@ -1,0 +1,34 @@
+{
+  "_comment": "Reference settings.json — DO NOT install this file as-is. Merge the `hooks` block into your own ~/.claude/settings.json and adjust the python path.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python /path/to/skills-curator/hooks/log-skill-usage.py"
+          }
+        ]
+      },
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python /path/to/skills-curator/hooks/log-skill-usage.py"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python /path/to/skills-curator/hooks/log-skill-usage.py"
+          }
+        ]
+      }
+    ]
+  }
+}

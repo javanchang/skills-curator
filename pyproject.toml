@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skills-curator"
+version = "0.2.0"
+description = "Curate installed Claude/Codex/agent skills: disk usage, call frequency, keep/prune recommendations."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+keywords = ["claude-code", "codex", "skill", "curator", "audit", "plugin"]
+authors = [
+  { name = "skills-curator contributors" }
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+# Runtime deps: only stdlib. Add here only if we adopt a non-stdlib helper.
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7",
+  "pytest-cov>=4",
+]
+
+[project.urls]
+"Bug Tracker" = "https://github.com/javanchang/skills-curator/issues"
+"Source" = "https://github.com/javanchang/skills-curator"
+"Changelog" = "https://github.com/javanchang/skills-curator/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+package-dir = { "" = "." }
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["hooks*", "skill*"]
